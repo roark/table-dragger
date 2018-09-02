@@ -47,6 +47,7 @@ export default class Dragger {
       staticClass: classes.static,
       direction: mode === 'column' ? 'horizontal' : 'vertical',
     })
+      .on('drop', this.onDrop)
       .on('drag', this.onDrag)
       .on('dragend', this.onDragend)
       .on('shadow', this.onShadow)
@@ -54,6 +55,10 @@ export default class Dragger {
 
     this.renderEl();
     this.dispatchMousedown();
+  }
+
+  onDrop () {
+    this.drake.cancel(true);
   }
 
   onDrag () {
