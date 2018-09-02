@@ -47,7 +47,7 @@ export default class Dragger {
       staticClass: classes.static,
       direction: mode === 'column' ? 'horizontal' : 'vertical',
     })
-      .on('drop', this.onDrop)
+      .on('drop', this.onDrop.bind(this))
       .on('drag', this.onDrag)
       .on('dragend', this.onDragend)
       .on('shadow', this.onShadow)

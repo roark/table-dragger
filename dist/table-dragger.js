@@ -2509,7 +2509,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      animation: 300,
 	      staticClass: _classes2.default.static,
 	      direction: mode === 'column' ? 'horizontal' : 'vertical'
-	    }).on('drop', this.onDrop).on('drag', this.onDrag).on('dragend', this.onDragend).on('shadow', this.onShadow).on('out', this.onOut);
+	    }).on('drop', this.onDrop.bind(this)).on('drag', this.onDrag).on('dragend', this.onDragend).on('shadow', this.onShadow).on('out', this.onOut);
 	
 	    this.renderEl();
 	    this.dispatchMousedown();
